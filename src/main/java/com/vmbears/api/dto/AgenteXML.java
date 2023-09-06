@@ -6,22 +6,22 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.List;
 
-@XmlRootElement
-public class Agente implements Serializable {
+@XmlRootElement(name = "agente")
+public class AgenteXML implements Serializable {
 
     private Integer codigo;
 
     private String data;
 
-    private List<Regiao> regiao;
+    private List<RegiaoXML> regiao;
 
 
-    public Agente(Integer codigo, String data) {
+    public AgenteXML(Integer codigo, String data) {
         this.codigo = codigo;
         this.data = data;
     }
 
-    public Agente() {
+    public AgenteXML() {
     }
 
     @XmlElement
@@ -42,12 +42,12 @@ public class Agente implements Serializable {
         this.data = data;
     }
 
-    @XmlElement
-    public List<Regiao> getRegiao() {
+    @XmlElement(name = "regiao")
+    public List<RegiaoXML> getRegiao() {
         return regiao;
     }
 
-    public void setRegiao(List<Regiao> regiao) {
+    public void setRegiao(List<RegiaoXML> regiao) {
         this.regiao = regiao;
     }
 }

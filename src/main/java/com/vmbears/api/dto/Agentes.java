@@ -6,19 +6,19 @@ import jakarta.xml.bind.annotation.*;
 import java.util.List;
 
 
-@XmlRootElement
+@XmlRootElement(name = "agentes")
 public class Agentes {
 
-    private List<Agente> agente;
+    private List<AgenteXML> agente;
 
     private String versao;
 
-    @XmlElement
-    public List<Agente> getAgente() {
+    @XmlElement(name = "agente")
+    public List<AgenteXML> getAgente() {
         return agente;
     }
 
-    public void setAgente(List<Agente> agente) {
+    public void setAgente(List<AgenteXML> agente) {
         this.agente = agente;
     }
 

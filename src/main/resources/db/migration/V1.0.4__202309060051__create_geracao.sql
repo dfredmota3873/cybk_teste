@@ -1,5 +1,4 @@
-CREATE TABLE vmbears.geracao (    id     uuid NOT NULL,
-                                    regiao_id uuid NOT NULL,
+CREATE TABLE vmbears.geracao (      id     uuid NOT NULL,
                                     valor_1 numeric(19,2) NOT NULL ,
                                     valor_2 numeric(19,2) NOT NULL ,
                                     valor_3 numeric(19,2) NOT NULL ,

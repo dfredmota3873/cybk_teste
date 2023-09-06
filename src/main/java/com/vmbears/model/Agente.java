@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -21,23 +23,23 @@ public class Agente {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private Integer codigo;
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime data;
+    @Temporal(TemporalType.DATE)
+    private LocalDate data;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "regiao_n_id")
-    Regiao regiaoN;
+    private Regiao regiaoN;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "regiao_ne_id")
-    Regiao regiaoNe;
+    private Regiao regiaoNe;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "regiao_s_id")
-    Regiao regiaoS;
+    private Regiao regiaoS;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "regiao_se_id")
-    Regiao regiaoSe;
+    private Regiao regiaoSe;
 
 }

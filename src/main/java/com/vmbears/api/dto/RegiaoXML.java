@@ -4,8 +4,8 @@ import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
-public class Regiao {
+@XmlRootElement(name = "regiao")
+public class RegiaoXML {
 
     private String sigla;
     private Valor compra;
