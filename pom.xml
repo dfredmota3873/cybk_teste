@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.2</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com</groupId>
+    <artifactId>vmbears</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>vmbears_api</name>
+    <description>vmbears_api</description>
+    <properties>
+        <java.version>17</java.version>
+        <spring.data.version>3.0.3</spring.data.version>
+        <spring.web.version>3.0.3</spring.web.version>
+        <flyway.core.version>9.15.1</flyway.core.version>
+        <postgresql.version>42.5.4</postgresql.version>
+        <lombok.version>1.18.26</lombok.version>
+        <spring.validation.version>3.0.0</spring.validation.version>
+        <modelmapper.version>3.1.1</modelmapper.version>
+        <spring.devtools.version>3.0.2</spring.devtools.version>
+        <spring.mockmvc.version>3.0.0</spring.mockmvc.version>
+        <spring.openapi.webmvc.version>2.0.4</spring.openapi.webmvc.version>
+        <junit.version>5.9.2</junit.version>
+        <log4j.version>1.2.17</log4j.version>
+        <bouncycastle.version>1.51</bouncycastle.version>
+        <mockito.version>4.4.0</mockito.version>
+        <spring.mail.version>3.0.3</spring.mail.version>
+        <asciidoctor.version>2.2.1</asciidoctor.version>
+        <spring.starter.version>3.0.3</spring.starter.version>
+        <spring.security.version>6.0.2</spring.security.version>
+        <spring.jwt.version>4.3.0</spring.jwt.version>
+        <auth0.version>2.0.0</auth0.version>
+        <spring.security.web.version>6.0.2</spring.security.web.version>
+        <spring.starter.security.version>3.0.4</spring.starter.security.version>
+        <jjwt.api.version>0.11.5</jjwt.api.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>${spring.data.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.web.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${flyway.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+            <version>${postgresql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>${spring.validation.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${modelmapper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>${spring.devtools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.restdocs</groupId>
+            <artifactId>spring-restdocs-mockmvc</artifactId>
+            <version>${spring.mockmvc.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${spring.openapi.webmvc.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.starter.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>${bouncycastle.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+            <version>${spring.mail.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>${spring.starter.security.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${spring.jwt.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>auth0</artifactId>
+            <version>${auth0.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.web.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+<!--            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>migrate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <driver>org.postgresql.Driver</driver>
+                    <url>jdbc:postgresql://localhost:5432/postgres</url>
+                    <user>postgres</user>
+                    <password>root</password>
+                    <baselineOnMigrate>true</baselineOnMigrate>
+                    <schemas>public</schemas>
+                    <locations>
+                        <location>
+                            filesystem:src/main/resources/db/migration
+                        </location>
+                    </locations>
+                </configuration>
+            </plugin> -->
+        </plugins>
+    </build>
+
+</project>
