@@ -10,3 +10,4 @@ Tecnologias Ultilizadas:
 * Jaxb
 * Swagguer
 * Flyway
+* PostgreSQL 13
