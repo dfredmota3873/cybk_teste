@@ -29,9 +29,9 @@ public class AgenteService {
     private final AgenteXmlConverter xmlConverter;
 
     @Transactional
-    public Agentes processarArquivos(MultipartFile arquivoXml) throws IOException, JAXBException {
+    public List<Agente> processarArquivos(MultipartFile arquivoXml) throws IOException, JAXBException {
 
-        File file = new File("D:\\Teste\\exemplo_01.xml");
+        File file = new File("D:\\Teste\\exemplo_03.xml");
         JAXBContext jaxbContext = JAXBContext.newInstance(Agentes.class);
 
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -45,7 +45,7 @@ public class AgenteService {
 
         agenteRepository.saveAll(agenteList);
 
-        return new Agentes();
+        return agenteList;
 
     }
 }

@@ -34,7 +34,5 @@ public class PrecoMedio {
     private BigDecimal valor6;
     @Column(name = "valor_7")
     private BigDecimal valor7;
-    @OneToOne(mappedBy = "precoMedio",cascade = CascadeType.ALL)
-    private Regiao regiao;
 
 }
