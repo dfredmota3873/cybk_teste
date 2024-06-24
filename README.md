@@ -11,3 +11,4 @@ Tecnologias Ultilizadas:
 * Swagguer
 * Flyway
 * PostgreSQL 13
+* Testes Unitários ( Junit e Mockito )
