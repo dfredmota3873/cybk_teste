@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -57,6 +58,12 @@ public class ContaController implements IContaController {
     @Override
     public ResponseEntity<BigDecimal> valorTotalPorPeriodo(LocalDate periodoInicial, LocalDate periodoFinal) {
         return ResponseEntity.ok(contaService.valorTotalPorPeriodo(periodoInicial,periodoFinal));
+    }
+
+    @Override
+    public ResponseEntity<Void> carregarCsv(MultipartFile file) {
+         contaService.carregarCsvContas(file);
+        return ResponseEntity.ok().build();
     }
 
 }

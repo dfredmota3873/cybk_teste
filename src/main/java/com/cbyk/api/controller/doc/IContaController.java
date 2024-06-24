@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -86,4 +87,19 @@ public interface IContaController {
     @GetMapping(value = "/total", produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<BigDecimal> valorTotalPorPeriodo(@RequestParam(name = "periodoInicial") LocalDate periodoInicial,
                                                     @RequestParam(name = "periodoFinal") LocalDate periodoFinal );
+
+
+    @Operation(summary = "Realiza o carregamento das contas via Csv",
+            description = "Realiza o carregamento das contas via Csv")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "Caso a carga seja realizada com sucesso."
+            )
+    })
+    @PostMapping(value = "/carregarCsv",consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<Void> carregarCsv(@RequestParam("file") MultipartFile file);
+
+
 }
