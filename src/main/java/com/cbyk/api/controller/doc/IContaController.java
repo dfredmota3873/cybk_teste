@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,7 @@ public interface IContaController {
             )
     })
     @PostMapping(value = "",produces=MediaType.APPLICATION_JSON_VALUE,consumes=MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<ContaResponse> cadastrar(@RequestBody ContaRequest contaRequest);
+    ResponseEntity<ContaResponse> cadastrar(@Valid @RequestBody ContaRequest contaRequest);
 
     @Operation(summary = "Buscar uma conta por id.")
     @ApiResponses(value = {
@@ -71,7 +72,7 @@ public interface IContaController {
             )
     })
     @PutMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE , consumes=MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<ContaResponse> atualizar(@PathVariable(name = "id") UUID id,@RequestBody ContaRequest contaRequest);
+    ResponseEntity<ContaResponse> atualizar(@PathVariable(name = "id") UUID id,@Valid @RequestBody ContaRequest contaRequest);
 
     @Operation(summary = "Buscar uma conta por id.")
     @ApiResponses(value = {

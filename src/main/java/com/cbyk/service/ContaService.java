@@ -1,5 +1,6 @@
 package com.cbyk.service;
 
+import com.cbyk.exception.BusinessException;
 import com.cbyk.model.Conta;
 import com.cbyk.model.enums.Situacao;
 import com.cbyk.repository.ContaRepository;
@@ -34,6 +35,10 @@ public class ContaService {
 
     @Transactional
     public Conta cadastrar(Conta conta) {
+
+        if(conta.getDataVencimento().isBefore(LocalDate.now()))
+            throw  new BusinessException("A data de vencimento não pode ser menor que a data de hoje.");
+
         return contaRepository.save(conta);
     }
 
