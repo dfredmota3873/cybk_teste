@@ -14,8 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.webjars.NotFoundException;
 
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -72,7 +71,7 @@ public class ContaService {
             List<Conta> contas = new ArrayList<>();
 
         try (
-                Reader reader = Files.newBufferedReader(Paths.get("C:\\Users\\Bob\\Documents\\teste\\teste.csv.txt"));
+                Reader reader = readCSVFile(file);
                 CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
         ) {
             for (CSVRecord csvRecord : csvParser) {
@@ -106,6 +105,27 @@ public class ContaService {
         }
 
 
+    }
+
+    private BufferedReader readCSVFile(MultipartFile file) throws IOException {
+
+        BufferedReader br = null;
+
+        List<String> result = new ArrayList<>();
+        try {
+
+            String line;
+            InputStream is = file.getInputStream();
+            br = new BufferedReader(new InputStreamReader(is));
+            while ((line = br.readLine()) != null) {
+                result.add(line);
+            }
+
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+
+        return br;
     }
 
 
